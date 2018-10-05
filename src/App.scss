@@ -62,3 +62,17 @@ h1 {
 li {
   list-style: none;
 }
+
+.field-set{
+  border: 1px solid gainsboro;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+.form-control, .btn {
+  border-radius: 0px !important;
+}
+
+.modal-dialog {
+  width: 600px;
+  height: 500px !important;
+}

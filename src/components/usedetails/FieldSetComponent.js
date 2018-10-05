@@ -3,9 +3,7 @@ import { FormControl } from 'react-bootstrap';
 
 export default class FieldSetComponent extends Component {
   state = {
-    chosenDetails:
-      this.props.chosenDetails &&
-      JSON.parse(JSON.stringify(this.props.chosenDetails))
+    chosenDetails: this.props.chosenDetails
   };
 
   componentWillReceiveProps(nextProps) {
@@ -34,8 +32,10 @@ export default class FieldSetComponent extends Component {
     let { chosenDetails } = this.state;
 
     return chosenDetails.map((chosenDetail, index) => {
+      debugger;
       return (
-        <div className="col-sm-6 offset-sm-3 field-set">
+        <div className="offset-sm-3 field-set">
+          <legend>Seat No : {chosenDetail.seatNo}</legend>
           <div className="row">
             <div className="col-sm-12">
               <div className="form-group">
@@ -75,12 +75,13 @@ export default class FieldSetComponent extends Component {
     });
   }
   render() {
+    debugger;
     let { chosenDetails } = this.state;
 
     if (Array.isArray(chosenDetails)) {
       return [
         this.getFieldSetDetails(),
-        <div className="col-sm-6 offset-sm-3 text-center">
+        <div className="offset-sm-3 text-center">
           <button
             className="btn btn-sm btn-primary"
             onClick={() => this.props.onFieldSetSave(this.state.chosenDetails)}

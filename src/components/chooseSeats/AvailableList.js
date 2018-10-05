@@ -6,7 +6,8 @@ class AvailableList extends React.Component {
     return (
       <div className="left">
         <h4>
-          Available Seats: ({seatCount == 0 ? 'No seats available' : seatCount})
+          Available Seats: ({seatCount === 0 ? 'No seats available' : seatCount}
+          )
         </h4>
         <ul>
           {this.props.available.map(res => (
