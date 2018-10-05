@@ -1,0 +1,125 @@
+@charset "UTF-8";
+/*
+* CSS TOGGLE SWITCH
+*
+* Ionuț Colceriu - ghinda.net
+* https://github.com/ghinda/css-toggle-switch
+*
+*/
+/* supported values are px, rem-calc, em-calc
+ */
+/* imports
+ */
+/* Functions
+ */
+/* Shared
+ */
+/* Hide by default
+ */
+ .switch-container {
+	position: relative;
+}
+
+.customToggleSwitch {
+    position: absolute;
+    background: white;
+    height: 25px;
+    margin-top: 0px;
+    width: 23px;
+    right: 0px;
+    border-radius: 20px;
+    min-width: 25px;
+}
+
+input[type="checkbox"].pushbutton  {
+	position: absolute;
+	opacity: 0;
+}
+
+input[type="checkbox"].pushbutton + div {
+	vertical-align: middle;
+	width: 18px;
+	height: 18px;
+	border-radius: 999px;
+	background-color: #c14139;
+	-webkit-transition-duration: .4s;
+	transition-duration: .4s;
+	-webkit-transition-property: background-color, box-shadow;
+	transition-property: background-color, box-shadow;
+	cursor: pointer;
+}
+
+input[type="checkbox"].pushbutton + div span {
+	position: absolute;
+    font-size: 1.4rem;
+    font-weight:bold;
+    color: white;
+    margin-top: 12px;
+    margin-left:5px !important;
+}
+
+input[type="checkbox"].pushbutton + div span:nth-child( 1 ) {
+    margin-left: 2.5px;
+}
+/*
+input[type="checkbox"].pushbutton + div span:nth-child( 2 ) {
+    margin-left: 38px;
+}*/
+
+input[type="checkbox"].pushbutton:checked + div {
+	width: 50px;
+	background-position: 0 0;
+	background-color: #c14139;
+}
+
+input[type="checkbox"].pushbutton + div {
+	  width: 50px;
+    height: 25px;
+}
+
+
+input[type="checkbox"].pushbutton:checked + div {
+	background-color: #6AB400;
+}
+/*
+input[type="checkbox"].pushbutton + div > div {
+	float: left;
+  width: 20px; 
+  height: 20px;
+	border-radius: inherit;
+	background: #ffffff;
+	//-webkit-transition-timing-function: cubic-bezier(1,0,0,1);
+	transition-timing-function: cubic-bezier(1,0,0,1);
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	-webkit-transition-property: transform, background-color;
+	transition-property: transform, background-color;
+	pointer-events: none;
+	margin-top: 2px;
+	margin-left: 3px;
+}
+*/
+input[type="checkbox"].pushbutton:checked + div > div {
+	-webkit-transform: translate3d(25px, 0, 0);
+	transform: translate3d(25px, 0, 0);
+	background-color: #ffffff;
+}
+
+input[type="checkbox"].bigswitch.pushbutton + div > div {
+	width: 20px;
+	height: 20px;
+}
+
+
+input[type="checkbox"].pushbutton:checked + div > div {
+	-webkit-transform: translate3d(35px, 0, 0);
+	transform: translate3d(35px, 0, 0);
+} 
+
+.switch-container label {
+	margin-bottom: 0px !important;
+}
+
+.switch-container label .glyphicon {
+    top: -6px !important;
+}

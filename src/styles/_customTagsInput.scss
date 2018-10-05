@@ -1,0 +1,21 @@
+.isDisabled {
+    color: currentColor;
+    cursor: not-allowed;
+    opacity: 0.5;
+    text-decoration: none;
+}
+.custom-tags {
+    .iconAdd {
+        font-size: 14px;
+        line-height: 31px;
+    }
+    .iconAdd:before {
+        top:3px;
+        left:2px;
+    }
+    .tag-number-input  {
+        input {
+            font-size: 13px !important;
+        }
+    }
+}

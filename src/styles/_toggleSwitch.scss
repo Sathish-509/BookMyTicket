@@ -1,0 +1,100 @@
+.switch-container {
+	position: relative;
+}
+
+.threeColorDisableClassName {
+	background-color: #cbcbcb !important;
+}
+
+input[type="checkbox"].switch  {
+	position: absolute;
+	opacity: 0 !important;
+}
+
+input[type="checkbox"].switch + div {
+	vertical-align: middle;
+	width: 18px;
+	height: 18px;
+	border-radius: 999px;
+	background-color:#ffb800;
+	-webkit-transition-duration: .4s;
+	transition-duration: .4s;
+	-webkit-transition-property: background-color, box-shadow;
+	transition-property: background-color, box-shadow;
+	cursor: pointer;
+}
+
+input[type="checkbox"].switch + div span {
+	position: absolute;
+    font-size: 1.4rem;
+    color: white;
+    margin-top: 12px;
+}
+
+input[type="checkbox"].switch + div span:nth-child( 1 ) {
+	margin-left: 8px;
+	left: 0px;
+}
+
+input[type="checkbox"].switch + div span:nth-child( 2 ) {
+	margin-left: 38px;
+	left: 0px;
+}
+
+input[type="checkbox"].switch:checked + div {
+	width: 60px;
+	background-position: 0 0;
+	background-color: #c14139;
+}
+
+input[type="checkbox"].switch + div {
+	width: 60px;
+    height: 25px;
+}
+
+
+input[type="checkbox"].switch:checked + div {
+	background-color: #6AB400;
+}
+
+input[type="checkbox"].switch + div > div {
+	float: left;
+    width: 20px; 
+    height: 20px;
+	border-radius: inherit;
+	background: #ffffff;
+	-webkit-transition-timing-function: cubic-bezier(1,0,0,1);
+	transition-timing-function: cubic-bezier(1,0,0,1);
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	-webkit-transition-property: transform, background-color;
+	transition-property: transform, background-color;
+	pointer-events: none;
+	margin-top: 2px;
+	margin-left: 3px;
+}
+
+input[type="checkbox"].switch:checked + div > div {
+	-webkit-transform: translate3d(25px, 0, 0);
+	transform: translate3d(25px, 0, 0);
+	background-color: #ffffff;
+}
+
+input[type="checkbox"].bigswitch.switch + div > div {
+	width: 20px;
+	height: 20px;
+}
+
+
+input[type="checkbox"].switch:checked + div > div {
+	-webkit-transform: translate3d(35px, 0, 0);
+	transform: translate3d(35px, 0, 0);
+} 
+
+.switch-container label {
+	margin-bottom: 0px !important;
+}
+
+.switch-container label .glyphicon {
+    top: -6px !important;
+}
