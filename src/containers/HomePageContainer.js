@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 
 class HomePageContainer extends React.Component {
   render() {
-    debugger;
     return (
       <div>
         <UpcomingEvents listOfEvents={this.props.listOfEvents} />
@@ -14,7 +13,6 @@ class HomePageContainer extends React.Component {
 }
 
 function mapStateToProps(state, ownProps) {
-  debugger;
   return {
     listOfEvents: state.event
   };

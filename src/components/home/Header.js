@@ -25,12 +25,10 @@ class Header extends React.Component {
   }
 
   handleChange = selection => {
-    debugger;
     selection ? console.log(selection.full_name) : console.log('reverted');
   };
 
   setValue(id, value) {
-    debugger;
     let { chosenDetails } = this.state;
     chosenDetails.eventdate = new Date();
     switch (id) {
@@ -48,13 +46,11 @@ class Header extends React.Component {
   }
 
   saveEvent() {
-    debugger;
     this.setState({ chosenDetails: {}, show: false });
     this.props.actions.createEvent(this.state.chosenDetails);
   }
 
   render() {
-    debugger;
     let searchData = this.props.listOfEvents || [];
     return (
       <div>
@@ -153,7 +149,6 @@ class Header extends React.Component {
 }
 
 function mapStateToProps(state, ownProps) {
-  debugger;
   return {
     listOfEvents: state.event,
     bookings: state.booking
