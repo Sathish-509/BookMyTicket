@@ -73,7 +73,7 @@ class Header extends React.Component {
             <a className="active" href="/">
               Home
             </a>
-            <a href="/bookingdetails">Booked Details</a>
+            <a href="/ticketdetails">Ticket Details</a>
             <Button
               bsStyle="primary"
               bsSize="sm"

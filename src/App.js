@@ -3,6 +3,7 @@ import './App.scss';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import BookingDetailsContainer from './containers/BookingDetailsContainer';
 import HomePageContainer from './containers/HomePageContainer';
+import TicketDetailsContainer from './containers/TicketDetailsContainer';
 import Header from './components/home/Header';
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
                 path="/bookingdetails"
                 component={BookingDetailsContainer}
               />
+              <Route path="/ticketdetails" component={TicketDetailsContainer} />
             </Switch>
           </BrowserRouter>
         </div>

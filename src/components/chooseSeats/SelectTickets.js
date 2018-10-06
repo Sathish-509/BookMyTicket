@@ -2,7 +2,6 @@ import React from 'react';
 import DrawGrid from './DrawGrid';
 import { Button } from 'react-bootstrap';
 import FieldSetComponent from '../usedetails/FieldSetComponent';
-import Modal from 'react-modal';
 import SlidingPane from 'react-sliding-pane';
 import 'react-sliding-pane/dist/react-sliding-pane.css';
 
@@ -41,15 +40,15 @@ class SelectTickets extends React.Component {
       chosenDetails: []
     };
     this.handleClick = this.handleClick.bind(this);
+    this.onFieldSetSave = this.onFieldSetSave.bind(this);
     this.close = this.close.bind(this);
   }
 
-  componentDidMount() {
-    Modal.setAppElement(this.el);
-  }
   onFieldSetSave(updatedDetails) {
     debugger;
     console.log(updatedDetails);
+    this.setState({ isPaneOpen: false });
+    this.props.selectedTickets(updatedDetails);
   }
 
   onClickData(seat) {
@@ -78,19 +77,11 @@ class SelectTickets extends React.Component {
 
   render() {
     const { isLoading } = this.state;
-    let chosenDetails = [
-      {
-        seatNo: '2'
-      },
-      {
-        seatNo: '3'
-      }
-    ];
     debugger;
-
+    this.props.selectedTickets;
     return (
       <div>
-        <h1>Seat Reservation System</h1>
+        <h1>Choose your seat</h1>
         <DrawGrid
           seat={this.state.seat}
           available={this.state.seatAvailable}
@@ -104,6 +95,7 @@ class SelectTickets extends React.Component {
         >
           Enter User Information
         </Button>
+        <a href="/ticketdetails">CheckOut</a>
         <div>
           <SlidingPane
             isOpen={this.state.isPaneOpen}
@@ -116,7 +108,6 @@ class SelectTickets extends React.Component {
             }}
           >
             <div>
-              And I am pane content. BTW, what rocks?
               <FieldSetComponent
                 chosenDetails={this.state.chosenDetails}
                 onFieldSetSave={this.onFieldSetSave}
@@ -124,32 +115,6 @@ class SelectTickets extends React.Component {
             </div>
             <br />
           </SlidingPane>
-        </div>
-        <div>
-          <Modal
-            className="modal-container"
-            show={this.state.showModal}
-            onHide={this.close}
-            animation={true}
-            bsSize="medium"
-          >
-            <Modal.Header closeButton>
-              <Modal.Title>{'Modal title'}</Modal.Title>
-            </Modal.Header>
-
-            <Modal.Body>
-              <FieldSetComponent
-                chosenDetails={chosenDetails}
-                onFieldSetSave={this.onFieldSetSave}
-              />{' '}
-              :
-            </Modal.Body>
-
-            <Modal.Footer>
-              <Button onClick={this.close}>Close</Button>
-              <Button bsStyle="primary">Save changes</Button>
-            </Modal.Footer>
-          </Modal>
         </div>
       </div>
     );
