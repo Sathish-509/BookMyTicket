@@ -78,14 +78,14 @@ class SelectTickets extends React.Component {
 
   render() {
     const { isLoading } = this.state;
-    /*let chosenDetails  = [
+    let chosenDetails = [
       {
         seatNo: '2'
       },
       {
         seatNo: '3'
       }
-    ];*/
+    ];
     debugger;
 
     return (
@@ -102,7 +102,7 @@ class SelectTickets extends React.Component {
           disabled={isLoading}
           onClick={!isLoading ? this.handleClick : null}
         >
-          Primary
+          Enter User Information
         </Button>
         <div>
           <SlidingPane
@@ -125,29 +125,32 @@ class SelectTickets extends React.Component {
             <br />
           </SlidingPane>
         </div>
-        {/*
         <div>
-        <Modal className="modal-container" 
-          show={this.state.showModal} 
-          onHide={this.close}
-          animation={true} 
-          bsSize="medium"
-        >
+          <Modal
+            className="modal-container"
+            show={this.state.showModal}
+            onHide={this.close}
+            animation={true}
+            bsSize="medium"
+          >
+            <Modal.Header closeButton>
+              <Modal.Title>{'Modal title'}</Modal.Title>
+            </Modal.Header>
 
-          <Modal.Header closeButton>
-            <Modal.Title>Modal title</Modal.Title>
-          </Modal.Header>
+            <Modal.Body>
+              <FieldSetComponent
+                chosenDetails={chosenDetails}
+                onFieldSetSave={this.onFieldSetSave}
+              />{' '}
+              :
+            </Modal.Body>
 
-          <Modal.Body>
-            <FieldSetComponent chosenDetails={chosenDetails} onFieldSetSave={this.onFieldSetSave}/> :
-          </Modal.Body>
-
-          <Modal.Footer>
-            <Button onClick={this.close}>Close</Button>
-            <Button bsStyle="primary">Save changes</Button>
-          </Modal.Footer>         
-        </Modal> 
-        </div> */}
+            <Modal.Footer>
+              <Button onClick={this.close}>Close</Button>
+              <Button bsStyle="primary">Save changes</Button>
+            </Modal.Footer>
+          </Modal>
+        </div>
       </div>
     );
   }

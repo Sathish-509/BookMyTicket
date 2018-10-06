@@ -1,11 +1,11 @@
 import { FETCH_EVENTS, CREATE_EVENT } from '../actions/actionTypes';
 
-export default (state = {}, action) => {
+export default (state = [], action) => {
   switch (action.type) {
     case FETCH_EVENTS:
-      return action.payload;
+      return state;
     case CREATE_EVENT:
-      return;
+      return [...state, action.payload];
     default:
       return state;
   }
