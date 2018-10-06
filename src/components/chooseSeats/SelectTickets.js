@@ -77,8 +77,6 @@ class SelectTickets extends React.Component {
 
   render() {
     const { isLoading } = this.state;
-    debugger;
-    this.props.selectedTickets;
     return (
       <div>
         <h1>Choose your seat</h1>
@@ -99,8 +97,8 @@ class SelectTickets extends React.Component {
         <div>
           <SlidingPane
             isOpen={this.state.isPaneOpen}
-            title="Hey, it is optional pane title.  I can be React component too."
-            subtitle="Optional subtitle."
+            title="Enter User Details"
+            subtitle=""
             width="500px"
             onRequestClose={() => {
               // triggered on "<" on left top click or on outside click

@@ -1,11 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import TicketDetails from './../components/TicketInformation/TicketDetails';
 
 class TicketDetailsContainer extends React.Component {
   render() {
-    debugger;
     this.props.listOfBookings;
-    return <div>Ticket Information</div>;
+    return (
+      <div>
+        <TicketDetails />
+      </div>
+    );
   }
 }
 

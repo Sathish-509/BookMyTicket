@@ -32,6 +32,7 @@ class Header extends React.Component {
   setValue(id, value) {
     debugger;
     let { chosenDetails } = this.state;
+    chosenDetails.eventdate = new Date();
     switch (id) {
       case 'EVENTNAME':
         chosenDetails.eventname = value;
@@ -48,6 +49,7 @@ class Header extends React.Component {
 
   saveEvent() {
     debugger;
+    this.setState({ chosenDetails: {}, show: false });
     this.props.actions.createEvent(this.state.chosenDetails);
   }
 
@@ -70,14 +72,13 @@ class Header extends React.Component {
             height={40}
           />
           <div className="header-right">
-            <a className="active" href="/">
-              Home
-            </a>
+            <a href="/">Home</a>
             <a href="/ticketdetails">Ticket Details</a>
             <Button
               bsStyle="primary"
               bsSize="sm"
               onClick={() => this.setState({ show: true })}
+              style={{ marginTop: '10px' }}
             >
               Create Event
             </Button>
@@ -140,7 +141,9 @@ class Header extends React.Component {
             </Modal.Body>
             <Modal.Footer>
               <Button onClick={this.handleHide}>Close</Button>
-              <Button onClick={this.saveEvent}>Save Event</Button>
+              <Button bsStyle="primary" onClick={this.saveEvent}>
+                Save Event
+              </Button>
             </Modal.Footer>
           </Modal>
         </div>

@@ -16,7 +16,11 @@ class UpcomingEvents extends React.Component {
           </li>
         );
       });
-    return <div>{eventList}</div>;
+    return (
+      <div>
+        {eventList.length > 0 ? eventList : <h2>Events Coming soon... </h2>}
+      </div>
+    );
   }
 }
 export default UpcomingEvents;

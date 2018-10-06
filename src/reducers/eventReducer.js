@@ -5,7 +5,7 @@ export default (state = [], action) => {
     case FETCH_EVENTS:
       return state;
     case CREATE_EVENT:
-      return [...state, action.payload];
+      return state.concat([action.payload]);
     default:
       return state;
   }

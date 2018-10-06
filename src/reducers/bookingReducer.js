@@ -5,7 +5,7 @@ export default (state = [], action) => {
     case FETCH_BOOKING:
       return state;
     case CREATE_BOOKING:
-      return [...state, action.payload];
+      return state.concat([action.payload]);
     default:
       return state;
   }
