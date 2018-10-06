@@ -4,20 +4,31 @@ import * as bookingActions from './../../actions/bookingActions';
 import * as eventActions from './../../actions/eventActions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import DateTimePicker from 'react-datetime-picker';
+import SearchBox from 'react-search-box';
 
 class Header extends React.Component {
   constructor() {
     super();
     this.state = {
       show: false,
-      chosenDetails: {}
+      chosenDetails: {},
+      searchData: []
     };
     this.handleHide = this.handleHide.bind(this);
     this.saveEvent = this.saveEvent.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
+
   handleHide() {
     this.setState({ show: false });
   }
+
+  handleChange = selection => {
+    debugger;
+    selection ? console.log(selection.full_name) : console.log('reverted');
+  };
+
   setValue(id, value) {
     debugger;
     let { chosenDetails } = this.state;
@@ -28,20 +39,36 @@ class Header extends React.Component {
       case 'EVENTLOCATION':
         chosenDetails.eventlocation = value;
         break;
+      case 'EVENTDATE':
+        chosenDetails.eventdate = value;
+        break;
     }
     this.setState({ chosenDetails });
   }
+
   saveEvent() {
     debugger;
     this.props.actions.createEvent(this.state.chosenDetails);
   }
+
   render() {
+    debugger;
+    let searchData = this.props.listOfEvents || [];
     return (
       <div>
         <div className="header">
           <a href="#default" className="logo">
             BookMyTicket
           </a>
+          <SearchBox
+            data={searchData}
+            onChange={this.handleChange}
+            placeholder="Search for a string..."
+            class="search-class"
+            searchKey="eventname"
+            width={300}
+            height={40}
+          />
           <div className="header-right">
             <a className="active" href="/">
               Home
@@ -49,7 +76,7 @@ class Header extends React.Component {
             <a href="/bookingdetails">Booked Details</a>
             <Button
               bsStyle="primary"
-              bsSize="medium"
+              bsSize="sm"
               onClick={() => this.setState({ show: true })}
             >
               Create Event
@@ -57,14 +84,6 @@ class Header extends React.Component {
           </div>
         </div>
         <div className="modal-container">
-          {/*<Button
-            bsStyle="primary"
-            bsSize="large"
-            onClick={() => this.setState({ show: true })}
-          >
-            Create Event
-          </Button>
-          */}
           <Modal
             show={this.state.show}
             onHide={this.handleHide}
@@ -91,6 +110,8 @@ class Header extends React.Component {
                       />
                     </div>
                   </div>
+                </div>
+                <div className="row">
                   <div className="col-sm-6">
                     <div className="form-group">
                       <label htmlFor="eventlocation">Event Location: </label>
@@ -100,6 +121,17 @@ class Header extends React.Component {
                         onChange={e =>
                           this.setValue('EVENTLOCATION', e.currentTarget.value)
                         }
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-sm-6">
+                    <div className="form-group">
+                      <label htmlFor="eventdate">Event Date: </label>
+                      <DateTimePicker
+                        onChange={date => this.setValue('EVENTDATE', date)}
+                        value={this.state.chosenDetails.eventdate || new Date()}
                       />
                     </div>
                   </div>
@@ -116,6 +148,7 @@ class Header extends React.Component {
     );
   }
 }
+
 function mapStateToProps(state, ownProps) {
   debugger;
   return {
