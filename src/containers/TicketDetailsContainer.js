@@ -1,13 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import TicketDetails from './../components/TicketInformation/TicketDetails';
+import * as bookingActions from './../actions/bookingActions';
 
 class TicketDetailsContainer extends React.Component {
+  componentWillMount() {
+    this.props.fetchBooking();
+  }
+
   render() {
     this.props.listOfBookings;
     return (
       <div>
-        <TicketDetails />
+        <TicketDetails listOfTickets={this.props.listOfBookings} />
       </div>
     );
   }
@@ -19,4 +24,7 @@ function mapStateToProps(state, ownProps) {
   };
 }
 
-export default connect(mapStateToProps)(TicketDetailsContainer);
+export default connect(
+  mapStateToProps,
+  bookingActions
+)(TicketDetailsContainer);

@@ -1,8 +1,8 @@
 import React from 'react';
 import SelectTickets from './../components/chooseSeats/SelectTickets';
 import * as bookingActions from './../actions/bookingActions';
+import * as actions from './../actions/actionTypes';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
 class BookingDetailsContainer extends React.Component {
   constructor() {
@@ -10,8 +10,12 @@ class BookingDetailsContainer extends React.Component {
     this.selectedTickets = this.selectedTickets.bind(this);
   }
 
+  componentWillMount() {
+    this.props.fetchBooking();
+  }
+
   selectedTickets(bookingDetails) {
-    this.props.actions.createBooking(bookingDetails);
+    this.props.createBooking(bookingDetails);
   }
 
   render() {
@@ -23,13 +27,7 @@ class BookingDetailsContainer extends React.Component {
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators({ ...bookingActions }, dispatch)
-  };
-}
-
 export default connect(
   null,
-  mapDispatchToProps
+  bookingActions
 )(BookingDetailsContainer);
