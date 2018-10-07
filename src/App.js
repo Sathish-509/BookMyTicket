@@ -24,15 +24,6 @@ class App extends Component {
           </BrowserRouter>
         </div>
       </div>
-      /*
-      <div className="App">
-        <header className="App-header">
-          <h2>3-State Toggle Switch</h2>
-        </header>
-        <div className="center">
-          <SelectTickets />
-        </div>
-      </div> */
     );
   }
 }

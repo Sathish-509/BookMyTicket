@@ -15,7 +15,6 @@ export default class FieldSetComponent extends Component {
   }
 
   setValue(id, value, index) {
-    debugger;
     let { chosenDetails } = this.state;
     switch (id) {
       case 'NAME':
@@ -32,7 +31,6 @@ export default class FieldSetComponent extends Component {
     let { chosenDetails } = this.state;
 
     return chosenDetails.map((chosenDetail, index) => {
-      debugger;
       return (
         <div className="offset-sm-3 field-set">
           <legend>Seat No : {chosenDetail.seatNo}</legend>
@@ -75,7 +73,6 @@ export default class FieldSetComponent extends Component {
     });
   }
   render() {
-    debugger;
     let { chosenDetails } = this.state;
 
     if (Array.isArray(chosenDetails)) {

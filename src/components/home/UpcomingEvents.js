@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 class UpcomingEvents extends React.Component {
   render() {
-    debugger;
     let eventList =
       this.props.listOfEvents &&
       this.props.listOfEvents.map((event, index) => {

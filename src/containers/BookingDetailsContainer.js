@@ -11,7 +11,6 @@ class BookingDetailsContainer extends React.Component {
   }
 
   selectedTickets(bookingDetails) {
-    debugger;
     this.props.actions.createBooking(bookingDetails);
   }
 
