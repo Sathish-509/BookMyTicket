@@ -44,7 +44,6 @@ class SelectTickets extends React.Component {
 
   onFieldSetSave(updatedDetails) {
     this.setState({ isPaneOpen: false });
-    debugger;
     this.props.selectedTickets(updatedDetails);
   }
 

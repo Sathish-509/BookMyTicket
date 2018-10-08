@@ -9,7 +9,6 @@ class TicketDetailsContainer extends React.Component {
   }
 
   render() {
-    this.props.listOfBookings;
     return (
       <div>
         <TicketDetails listOfTickets={this.props.listOfBookings} />
