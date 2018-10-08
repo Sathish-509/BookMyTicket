@@ -23,6 +23,12 @@ export default class FieldSetComponent extends Component {
       case 'AGE':
         chosenDetails[index].age = value;
         break;
+      case 'PHONE':
+        chosenDetails[index].phone = value;
+        break;
+      case 'EMAIL':
+        chosenDetails[index].email = value;
+        break;
     }
     this.setState({ chosenDetails });
   }
@@ -47,14 +53,44 @@ export default class FieldSetComponent extends Component {
                 />
               </div>
             </div>
-            <div className="col-sm-3">
+          </div>
+          <div className="row">
+            <div className="col-sm-4">
               <div className="form-group">
                 <label htmlFor="age">Age</label>
                 <FormControl
-                  type="text"
+                  type="number"
                   value={chosenDetail.age || ''}
+                  maxLength={2}
                   onChange={e =>
                     this.setValue('AGE', e.currentTarget.value, index)
+                  }
+                />
+              </div>
+            </div>
+            <div className="col-sm-4">
+              <div className="form-group">
+                <label htmlFor="phone">Phone No: </label>
+                <FormControl
+                  type="number"
+                  value={chosenDetail.phone || ''}
+                  maxLength={10}
+                  onChange={e =>
+                    this.setValue('PHONE', e.currentTarget.value, index)
+                  }
+                />
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-sm-6">
+              <div className="form-group">
+                <label htmlFor="email">Email: </label>
+                <FormControl
+                  type="email"
+                  value={chosenDetail.email || ''}
+                  onChange={e =>
+                    this.setValue('EMAIL', e.currentTarget.value, index)
                   }
                 />
               </div>
