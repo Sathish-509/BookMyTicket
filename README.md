@@ -2,27 +2,27 @@
 
 <div align="center">
 Home Page Create Event
-<img width="183px" alt="Create Event" src="https://github.com/Sathish-509/BookMyTicket/blob/master/documents/createevent.png">
+<img width="183px" alt="Create Event" src="https://github.com/Sathish-509/BookMyTicket/blob/master/documents/createevent.PNG">
 </div>
 
 <div align="center">
 Booking Details
-<img width="183px" alt="Booking Details" src="https://github.com/Sathish-509/BookMyTicket/blob/master/documents/Booking.png">
+<img width="183px" alt="Booking Details" src="https://github.com/Sathish-509/BookMyTicket/blob/master/documents/Booking.PNG">
 </div>
 
 <div align="center">
 User Details
-<img width="183px" alt="Ticket Detailsc" src="https://github.com/Sathish-509/BookMyTicket/blob/master/documents/Booking_userdetails.png">
+<img width="183px" alt="Ticket Detailsc" src="https://github.com/Sathish-509/BookMyTicket/blob/master/documents/Booking_userdetails.PNG">
 </div>
 
 <div align="center">
 Ticket Details
-<img width="183px" alt="Booking Details" src="https://github.com/Sathish-509/BookMyTicket/blob/master/documents/TicketDetails1.png">
+<img width="183px" alt="Booking Details" src="https://github.com/Sathish-509/BookMyTicket/blob/master/documents/TicketDetails1.PNG">
 </div>
 
 <div align="center">
 Ticket Details 2
-<img width="183px" alt="Ticket Detailsc" src="https://github.com/Sathish-509/BookMyTicket/blob/master/documents/TicketDetails2.png">
+<img width="183px" alt="Ticket Detailsc" src="https://github.com/Sathish-509/BookMyTicket/blob/master/documents/TicketDetails2.PNG">
 </div>
 
  ## **BookMy Ticket App**
