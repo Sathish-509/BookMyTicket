@@ -34,8 +34,6 @@ class SelectTickets extends React.Component {
       ],
       seatReserved: [],
       isLoading: false,
-      showuserDetails: false,
-      showModal: false,
       isPaneOpen: false,
       chosenDetails: []
     };
@@ -46,6 +44,7 @@ class SelectTickets extends React.Component {
 
   onFieldSetSave(updatedDetails) {
     this.setState({ isPaneOpen: false });
+    debugger;
     this.props.selectedTickets(updatedDetails);
   }
 
@@ -67,7 +66,7 @@ class SelectTickets extends React.Component {
     }
   }
   handleClick() {
-    this.setState({ showuserDetails: true, showModal: true, isPaneOpen: true });
+    this.setState({ isPaneOpen: true });
   }
   close() {
     this.setState({ showModal: false });
