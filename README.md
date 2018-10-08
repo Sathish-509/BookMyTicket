@@ -12,7 +12,7 @@ Booking Details
 
 <div align="center">
 User Details
-<img width="183px" alt="Ticket Detailsc" src="https://github.chttps://github.com/Sathish-509/BookMyTicket/blob/master/documents/Booking.PNGom/Sathish-509/BookMyTicket/blob/master/documents/Booking_userdetails.PNG">
+<img width="183px" alt="Ticket Detailsc" src="https://github.chttps://github.com/Sathish-509/BookMyTicket/blob/master/documents/Booking_userdetails.PNG">
 </div>
 
 <div align="center">
